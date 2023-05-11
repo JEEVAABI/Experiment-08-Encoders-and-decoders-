@@ -55,7 +55,19 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+### Step 1:
+Module Declaration. module is a keywords defined in Verilog .
+
+### Step 2:
+Input-Output Delecaration.
+
+8 to 3 Encoder has eight inputs and three outputs. 3 to 8 Decoder has three inputs and eight outputs.
+
+### Step 3:
+In the verilog program of encoder we use or gates . In the verilog program of decoder we use only and gates.
+
+### Step 4:
+Ending module. endmodule is a keywords defined in Verilog.
 
 
 
