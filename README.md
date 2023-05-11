@@ -62,35 +62,68 @@ D7 = X Y Z
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Jeeva Abishake
+RegisterNumber: 212221240018  
 */
+### Decoder:
+```
+module decode (d0,d1,d2,d3,d4,d5,d6,d7,x,y,z);
+input x,y,z;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0=(~x & ~y & ~z);
+assign d1=(x & y & ~z);
+assign d2=(x & ~y & z);
+assign d3=(x & ~y & ~z);
+assign d4=(~x & y & z);
+assign d5=(~x & y & ~z);
+assign d6=(~x & ~y & z);
+assign d7=(x & y & z);
+endmodule
+
+```
+### Encoder:
+```
+module encode(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
 
 
 
 
-
-
+## OUTPUT :
+## Decoder
 ### RTL LOGIC  
+![outputdertl](decodertl.png)
+
+### TIMING DIGRAMS  
+![outputdewav](decode2.png)
 
 
+### TRUTH TABLE
+![outputtt](ttd.png)
 
-
-
-
+## Encoder
+### RTL LOGIC  
+![outputenrtl](encodertl.png)
 
 
 ### TIMING DIGRAMS  
-
-
-
+![outputenewav](ecodewave.png)
 
 
 ### TRUTH TABLE 
-
+![outputtt](tte.png)
 
 
 
 
 
 ### RESULTS 
+Implementation of 8 to 3 Encoder and 3 to 8 Decoder is done using verilog and its outputs is validated.
+
+
